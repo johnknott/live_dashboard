@@ -245,8 +245,7 @@ defmodule Phoenix.LiveDashboard.PageLive do
     if component = extract_info_component(title) do
       params = Map.delete(params, "info")
 
-      path =
-        &PageBuilder.live_dashboard_path(socket, page.route, &1, params, Enum.into(&2, params))
+      path = &PageBuilder.live_dashboard_path(socket, page.route, &1, params, Enum.into(&2, params))
 
       live_modal(component,
         id: title,

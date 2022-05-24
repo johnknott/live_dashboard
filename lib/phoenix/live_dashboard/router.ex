@@ -339,6 +339,8 @@ defmodule Phoenix.LiveDashboard.Router do
     {pages, requirements} =
       [
         home: {Phoenix.LiveDashboard.HomePage, %{env_keys: env_keys, home_app: home_app}},
+        calls: {Phoenix.LiveDashboard.CallsPage, %{}},
+        old_home: {Phoenix.LiveDashboard.OldHomePage, %{env_keys: env_keys, home_app: home_app}},
         os_mon: {Phoenix.LiveDashboard.OSMonPage, %{}}
       ]
       |> Enum.concat(metrics_page(metrics, metrics_history))
